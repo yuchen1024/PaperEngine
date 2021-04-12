@@ -1,0 +1,52 @@
+%!TEX program = xelatex
+\documentclass[a4paper,11pt]{article}
+% 使用UTF8编码, punct--对中文标点显示进行优化
+\usepackage[UTF8, punct]{ctex}
+% 定义页面尺寸
+% \usepackage[a4paper, left = 3.2cm, right = 3.2cm, top = 2.54cm, bottom = 2.54cm]{geometry}
+\usepackage{fullpage}
+% 使用xeCJK处理中文
+\usepackage{xeCJK}
+
+% 设置文档主字体和粗体(直接调用系统字体---操作系统上的postscript字体名称)
+%\setCJKmainfont[BoldFont=STKaitiSC-Bold]{STKaitiSC-Regular}
+
+% 缩小公式段前段后空间
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+
+% 定义行距
+\linespread{1.56}
+
+% 引入常用宏包
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[framed, amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage[colorlinks, anchorcolor=blue, linkcolor=blue, citecolor=blue, urlcolor=cyan]{hyperref}
+
+% 设置参考文献样式
+\usepackage[numbers,sectionbib]{natbib}
+\makeatletter
+    \renewcommand\@biblabel[1]{{[#1]\hfill}}
+\makeatother
+\setlength{\bibsep}{0.5ex}
+
+\renewcommand\bibname{参考文献}
+\renewcommand{\bibfont}{\footnotesize}
+
+% define the colors
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\cyan}[1]{{\color{cyan} #1}}
+\newcommand{\purple}[1]{{\color{purple} #1}}
+\newcommand{\yellow}[1]{{\color{yellow} #1}}
+\newcommand{\darkred}[1]{{\color{darkred} #1}}
+\newcommand{\gray}[1]{{\color{gray} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\green}[1]{{\color{green}#1}}
+\newcommand{\magenta}[1]{{\color{magenta} #1}}
+\newcommand{\black}[1]{{\color{black} #1}}

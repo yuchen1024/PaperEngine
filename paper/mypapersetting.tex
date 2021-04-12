@@ -1,0 +1,159 @@
+\usepackage{fullpage}
+\usepackage{latexsym}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{soul}
+\usepackage{cancel,siunitx}
+\usepackage{pifont}  % 特殊符号图标(如对勾)
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage[numbers,sectionbib]{natbib}
+\makeatletter
+    \renewcommand\@biblabel[1]{{[#1]\hfill}}
+\makeatother
+\setlength{\bibsep}{0.5ex}
+\usepackage[colorlinks, anchorcolor=blue, linkcolor=blue, citecolor=blue, urlcolor=cyan]{hyperref}
+\usepackage[title,titletoc,header]{appendix}
+% \usepackage{authblk}
+% \renewcommand*{\Affilfont}{\small}
+
+% \usepackage{tikz}     % 绘图包
+
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{matrix, fit, calc, matrix, patterns, backgrounds, arrows, 
+shapes, chains, fit, decorations, intersections, positioning}
+
+\tikzset{
+    shapenode/.style = {draw, rectangle, fill=none, minimum size=0.5cm, minimum height=0.6cm, minimum width=0.6cm, 
+    auto, node distance=0em, font=\normalsize}, 
+    roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep = 0.2em, 
+      node distance=0em, minimum height=1.5em},
+    rectanglenode/.style = {draw, rectangle, inner sep = 0em, node distance=0em},
+    textnode/.style  = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\normalsize},
+    smalltextnode/.style  = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\small},
+    circlenode/.style = {draw, circle, auto, inner sep = 0em, node distance=0em, minimum size=1.5em}, 
+    dotnode/.style = {draw, fill=black, circle, auto, minimum size=0.1em, inner sep = 0em, node distance=0em},  
+    connect/.style = {black,->}, 
+    every text node part/.style={align=center}
+}
+
+
+\usepackage{framed}
+\usepackage{boxedminipage}
+
+% define the colors
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\cyan}[1]{{\color{cyan} #1}}
+\newcommand{\purple}[1]{{\color{purple} #1}}
+\newcommand{\yellow}[1]{{\color{yellow} #1}}
+\newcommand{\darkred}[1]{{\color{darkred} #1}}
+\newcommand{\gray}[1]{{\color{gray} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\green}[1]{{\color{green}#1}}
+\newcommand{\magenta}[1]{{\color{magenta} #1}}
+\newcommand{\black}[1]{{\color{black} #1}}
+\newcommand{\orange}[1]{{\color{orange} #1}}
+
+\colorlet{lightgray}{gray!20}
+\colorlet{darkgray}{gray!100}
+
+% define shorthands
+\newcommand{\define}{\stackrel{\textup{def}}{=}}
+
+\newcommand{\iO}{i\mathcal{O}}
+\newcommand{\diO}{di\mathcal{O}}
+\newcommand{\sample}{\xleftarrow{\textup{\tiny R}}}
+\newcommand{\expect}{\mathbb{E}}
+\newcommand{\entropy}{\mathsf{H}}
+\newcommand{\minentropy}{\mathsf{H}_\infty}
+\newcommand{\avminentropy}{\tilde{\mathsf{H}}_\infty}
+\newcommand{\AdvA}{\mathsf{Adv}_\mathcal{A}(\lambda)}
+
+\newcommand{\outV}{\text{out}_V}
+\newcommand{\viewV}{\text{view}_V}
+\newcommand{\viewVstar}{\text{view}_{V^*}}
+
+\newcommand{\Oderive}{\mathcal{O}_\mathsf{derive}^\Phi}
+\newcommand{\Oinv}{\mathcal{O}_\mathsf{inv}}
+\newcommand{\Oleak}{\mathcal{O}_\mathsf{leak}(\cdot)}
+\newcommand{\Ovefy}{\mathcal{O}_\mathsf{vefy}(\cdot,\cdot)}
+\newcommand{\Otag}{\mathcal{O}_\mathsf{tag}(\cdot)}
+\newcommand{\Osign}{\mathcal{O}_\mathsf{sign}}
+\newcommand{\Odecaps}{\mathcal{O}_\mathsf{decaps}}
+\newcommand{\Odec}{\mathcal{O}_\mathsf{dec}}
+\newcommand{\OregH}{\mathcal{O}_\mathsf{regH}}
+\newcommand{\OregC}{\mathcal{O}_\mathsf{regC}}
+\newcommand{\Oreveal}{\mathcal{O}_\mathsf{reveal}}
+\newcommand{\Oibedecaps}{\mathcal{O}_\mathsf{decaps}(\cdot, \cdot)}
+\newcommand{\Osim}{\mathcal{O}_\mathsf{sim}}
+\newcommand{\Oenc}{\mathcal{O}_\mathsf{enc}}
+\newcommand{\Oext}{\mathcal{O}_\mathsf{ext}}
+\newcommand{\Oconstrain}{\mathcal{O}_\mathsf{constrain}}
+\newcommand{\Oevalempty}{\mathcal{O}_\mathsf{eval}(\$)}
+
+\newcommand{\Oracle}{\mathcal{O}}
+\newcommand{\TBA}{\blue{To be add more ...}}
+
+\newcommand{\poly}{\textup{poly}}
+\newcommand{\polylog}{\textup{polylog}}
+\newcommand{\loglog}{\textup{loglog}}
+% \newcommand{\MA}{\mathbf{MA}}
+% \newcommand{\PSAPCE}{\mathbf{PSPACE}}
+% \newcommand{\NEXT}{\mathbf{NEXT}}
+
+% define theorem enviroments
+\theoremstyle{plain}% default
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{note}{Note}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{construction}{Construction}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{discussion}{Discussion}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{case}{Case}[section]
+\newtheorem{observation}{Observation}[section]
+
+% define references
+\renewcommand\bibname{References}
+\renewcommand{\bibfont}{\small}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage[normalem]{ulem} % 批注
+
+\newcommand{\redul}{\bgroup\markoverwith{\textcolor{red}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 红色下划线
+\newcommand{\blueul}{\bgroup\markoverwith{\textcolor{blue}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 蓝色下划线
+\newcommand{\blackul}{\bgroup\markoverwith{\textcolor{black}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 黑色下划线
+
+% define new commands
+\newcommand{\myindent}{\hspace{1em}}
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip\noindent\keywordname\enspace\ignorespaces#1}
+
+\newcommand{\hatf}{\hat{f}}
+
+\newenvironment{mytrivlist}{\begin{trivlist}\itemsep 1pt \parskip 0pt \parsep 0pt}{\end{trivlist}}
+\newenvironment{myitemize}{\begin{itemize}\itemsep 1pt \parskip 0pt \parsep 0pt}{\end{itemize}}
+\newenvironment{myenumerate}{\begin{enumerate}\itemsep 1pt \parskip 0pt \parsep 0pt}{\end{enumerate}}
+
+\renewcommand\bibname{References}
+\renewcommand{\bibfont}{\small}

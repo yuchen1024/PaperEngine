@@ -1,0 +1,283 @@
+\usepackage{fontspec}
+\usepackage{tcolorbox}
+
+\usepackage{xeCJK}
+\setCJKmainfont{Kai}
+% \setCJKmainfont{Kai}[AutoFakeBold]
+%\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+
+\usetheme{default} % 加载默认样式文件
+%\usefonttheme{serif} % 使用衬线字体
+\usecolortheme{orchid} % 兰花色彩风格
+\useinnertheme{rounded} % 圆角风格
+
+
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries} % 设定页眉标题
+\setbeamertemplate{navigation symbols}{} % 设定导航标志为空
+% \setbeamertemplate{headline}[default]
+%\setbeamertemplate{navigation symbols}{\Large{\copyright Yu Chen}} % 设定导航标志
+\setbeamertemplate{footline}[frame number] % 设定页脚
+
+% 加载各类宏包
+\usepackage{amsmath, amssymb, amsfonts} % 数学类AMS宏包
+\usepackage{mathrsfs} % 数学字体
+\usepackage{tabularx} % 表格
+\usepackage{threeparttable} % 三线表
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell} % 处理表格中分行分栏
+\usepackage{diagbox}
+\usepackage{soul}
+\usepackage{cancel,siunitx}
+\usepackage{multimedia}
+
+
+\usepackage[ruled,lined,linesnumbered]{algorithm2e} % 算法框图
+% \let\oldnl\nl% Store \nl in \oldnl
+% \newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}% Remove line number for one line
+\IncMargin{1em}
+\SetNlSty{text}{}{:}
+
+\usepackage{wasysym} % 表情图标
+\usepackage{pifont}  % 特殊符号图标(如对勾)
+\usepackage{animate} % 动图
+
+\usepackage{framed} % 加框包
+\usepackage{boxedminipage}
+
+%\usepackage{graphicx} % 插图包
+\usepackage{xcolor}   % 增强色彩包
+\usepackage{tikz}     % 绘图包
+\usetikzlibrary{calc, matrix, patterns, backgrounds, arrows, shapes, snakes, circuits, circuits.logic.US, 
+chains, fit, decorations, intersections, positioning}
+
+\tikzset{
+    shapenode/.style = {draw, rectangle, fill=none, auto, node distance=0em, font=\normalsize}, 
+    roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep = 0.2em, 
+      node distance=0em, minimum height=1.5em},
+    rectanglenode/.style = {draw, rectangle, inner sep = 0em, node distance=0em, minimum height=2em},
+    textnode/.style  = {draw=none, fill=none, rectangle, minimum size=0cm, inner sep = 0em, 
+      auto, node distance=0em, font=\normalsize},
+    smalltextnode/.style  = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\small},
+    circlenode/.style = {circle, draw, auto, inner sep = 0em, node distance=0em}, 
+    ellipsenode/.style = {draw, ellipse, inner sep = 0em, node distance=0em, minimum height=0em, minimum width=0em},
+    dotnode/.style = {draw, fill=black, circle, auto, minimum size=0.2em, inner sep = 0em, node distance=0em},  
+    connect/.style = {black,->},
+    implies/.style={double,double equal sign distance,-implies}, 
+    every text node part/.style={align=center}
+}
+
+\usepackage{url} % 设置参考文献样式
+%\hypersetup{colorlinks=true, anchorcolor=blue, linkcolor=blue, citecolor=blue, urlcolor=cyan}
+
+\usepackage[numbers,sectionbib]{natbib}
+\makeatletter
+  \renewcommand\@biblabel[1]{{[#1]\hfill}}
+\makeatother
+\setlength{\bibsep}{0.5ex}
+
+\let\oldcite=\cite                                                              
+\renewcommand{\cite}[1]{\blue{\oldcite{#1}}}
+
+\renewcommand\bibname{References}
+\renewcommand{\bibfont}{\scriptsize}
+
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\newcommand{\dash}{\rule{0.05em}{0pt}\rule[0.3em]{0.6em}{0.06em}\rule{0.05em}{0pt}}
+\newcommand{\define}{\stackrel{\text{def}}{=}}
+
+
+% \usepackage[printwatermark]{xwatermark} % 嵌入水印
+% \newsavebox\mybox
+% \savebox\mybox{\tikz[color=blue!30,opacity=0.15]\node{Yu Chen};}
+% \newwatermark*[
+%   allpages,
+%   angle=40,
+%   scale=9,
+%   xpos=-24,
+%   ypos=32
+% ]{\usebox\mybox} % 水印设置
+
+\definecolor{lightmidnightblue}{rgb}{0.2, 0.2, 0.7}
+\definecolor{mycolor}{rgb}{51,51,178}
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\white}[1]{{\color{white} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\cyan}[1]{{\color{cyan} #1}}
+\newcommand{\green}[1]{{\color{green}#1}}
+\newcommand{\darkgreen}[1]{{\color{darkgreen}#1}}
+\newcommand{\orange}[1]{{\color{orange} #1}}
+\newcommand{\yellow}[1]{{\color{yellow} #1}}
+\newcommand{\magenta}[1]{{\color{magenta} #1}}
+\newcommand{\gray}[1]{{\color{gray} #1}}
+\newcommand{\purple}[1]{{\color{purple} #1}}
+\newcommand{\mdblue}[1]{{\color{lightmidnightblue} #1}}
+
+\newcommand{\codecomment}[1]{{\color{blue} //#1}}
+
+\newcommand{\splitline}{\darkgreen{\rule[0.25\baselineskip]{\textwidth}{0.6pt}}} % 分割线
+
+\usepackage[normalem]{ulem} % 批注
+
+\newcommand{\redboxed}[1]{\red{\boxed{#1}}}
+\newcommand{\blueboxed}[1]{\mdblue{\boxed{#1}}}
+\newcommand{\redul}{\bgroup\markoverwith{\textcolor{red}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 红色下划线
+\newcommand{\blueul}{\bgroup\markoverwith{\textcolor{blue}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 蓝色下划线
+\newcommand{\greenul}{\bgroup\markoverwith{\textcolor{green}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 绿色下划线
+\newcommand{\darkgreenul}{\bgroup\markoverwith{\textcolor{darkgreen}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 绿色下划线
+\newcommand{\blackul}{\bgroup\markoverwith{\textcolor{black}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 黑色下划线
+
+
+\makeatletter % 批注颜色
+\newcommand\soulcolor{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color}
+\makeatother
+
+\setbeamerfont{footnote}{size=\small}
+% add text to beamer footline
+\makeatletter
+% add a macro that saves its argument
+\newcommand{\footlineextra}[1]{\gdef\insertfootlineextra{#1}}
+\newbox\footlineextrabox
+ 
+% add a beamer template that sets the saved argument in a box.
+% The * means that the beamer font and color "footline extra" are automatically added. 
+\defbeamertemplate*{footline extra}{default}{
+  \begin{beamercolorbox}[ht=2.25ex,dp=1ex,leftskip=\Gm@lmargin]{footline extra}
+    \insertfootlineextra
+    % \par\vspace{2.5pt}
+  \end{beamercolorbox}
+}
+ 
+\addtobeamertemplate{footline}{%
+  % set the box with the extra footline material but make it add no vertical space
+  \setbox\footlineextrabox=\vbox{\usebeamertemplate*{footline extra}}
+  \vskip -\ht\footlineextrabox
+  \vskip -\dp\footlineextrabox
+  \box\footlineextrabox%
+}
+{}
+ 
+% patch \begin{frame} to reset the footline extra material
+\let\beamer@original@frame=\frame
+\def\frame{\gdef\insertfootlineextra{}\beamer@original@frame}
+\footlineextra{}
+\makeatother
+
+\newcommand{\iO}{i\mathcal{O}}
+\newcommand{\diO}{di\mathcal{O}}
+\newcommand{\sample}{\xleftarrow{\textup{\tiny R}}}
+\newcommand{\AdvA}{\mathsf{Adv}_\mathcal{A}(\lambda)}
+
+\newcommand{\expect}{\mathbb{E}}
+\newcommand{\entropy}{\mathsf{H}}
+\newcommand{\minentropy}{\mathsf{H}_\infty}
+\newcommand{\avminentropy}{\tilde{\mathsf{H}}_\infty}
+\newcommand{\Phisb}{\Phi_\textup{brs}^\textup{srs}}
+
+\setbeamertemplate{theorems}[numbered] %强制定理编号
+
+% define theorem enviroments
+\theoremstyle{plain}% default
+% \newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+
+% \theoremstyle{definition}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{conjecture}{Conjecture}[section]
+% \newtheorem{example}{Example}[section]
+% \newtheorem{note}{Note}[section]
+% \newtheorem{assumption}{Assumption}[section]
+% \newtheorem{construction}{Construction}[section]
+% \newtheorem{exercise}{Exercise}[section]
+% \newtheorem{discussion}{Discussion}[section]
+
+
+
+\newenvironment{remarkblock}[0]{%
+\setbeamercolor{block body}{bg=blue!10,fg=black}
+\begin{block}{}}
+{\end{block}}
+
+\newenvironment{noteblock}[0]{%
+\setbeamercolor{block body}{bg=gray!20,fg=black}
+\begin{block}{}}
+{\end{block}}
+
+
+\newenvironment{claim}
+{\begin{trivlist} \item \textbf{Claim.}}
+{\end{trivlist}}
+
+% 定义假设环境
+\newenvironment<>{assumption}[1]{%
+  \setbeamercolor{block title}{bg=orange,fg=white}
+  \setbeamercolor{block body}{bg=orange!20,fg=black}
+  \begin{block}#2{#1}}{\end{block}
+}
+
+% 定义构造环境
+\newenvironment<>{myconstruction}[1]{%
+  \setbeamercolor{block title}{bg=orange,fg=white}
+  \setbeamercolor{block body}{bg=orange!20,fg=black}
+  \begin{block}#2{#1}}{\end{block}
+}
+
+\makeatletter
+\def\th@mystyle{%
+    \normalfont % body font
+    \setbeamercolor{block title example}{}
+    \setbeamercolor{block body example}{}
+    \def\inserttheoremblockenv{exampleblock}
+  }
+\makeatother
+\theoremstyle{mystyle}
+\newtheorem*{construction}{Construction}
+
+\newenvironment<>{greenbox}[1]{
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black]#1}
+{\end{tcolorbox}}
+
+\newenvironment<>{bluebox}[1]{
+\begin{tcolorbox}[boxsep=0em,colback=white,colframe=blue]#1}
+{\end{tcolorbox}}
+
+\newenvironment<>{redbox}[1]{
+\begin{tcolorbox}[boxsep=0em, colback=white,colframe=red]#1}
+{\end{tcolorbox}}
+
+\newenvironment<>{titledredbox}[1][2]{
+\begin{tcolorbox}[boxsep=0em, colback=white,colframe=red, title=#1]#2}
+{\end{tcolorbox}}
+
+\newenvironment<>{orangebox}[1]{
+\begin{tcolorbox}[colback=white,colframe=orange]#1}
+{\end{tcolorbox}}
+
+\newenvironment<>{question}[1]{
+\begin{center}\itshape{#1}}
+{\end{center}}
+
+\newenvironment<>{theoremblock}[1]{
+\begin{noteblock}\mdblue{Theorem:} #1}
+{\end{noteblock}}
+
+\newenvironment<>{lemmablock}[1]{
+\begin{noteblock}\mdblue{Lemma:} #1}
+{\end{noteblock}}
+
+\newcommand{\Cloud}[2][180]% [angle], content
+{\begin{tikzpicture}[overlay]
+    \node[align=center, draw, shading=ball, text=white, cloud callout, cloud puffs=17, cloud puff arc=140, 
+      callout pointer segments=3, anchor=pointer, callout relative pointer={(#1:2 cm )}, aspect=4,scale=0.5] at (0.2ex,0.5ex) {#2};
+\end{tikzpicture}
+}
+
+\newcommand{\mydash}{\rule{0.05em}{0pt}\rule[0.35em]{0.5em}{0.05em}}

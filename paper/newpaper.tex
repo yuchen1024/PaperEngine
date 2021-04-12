@@ -1,0 +1,55 @@
+\newcommand{\path}{/Users/chenyu/Documents/Research/PaperEngine}
+\newcommand{\bibpath}{/Users/chenyu/Documents/Research/PaperEngine/Bib}
+\documentclass[a4paper,10pt]{article}
+
+\input{\path/mypapersetting}
+
+\begin{document}
+
+\title{XXX}
+
+\author{
+  Yu Chen
+  \thanks{Institute of Information Engineering, Chinese Academy of Sciences. Email: \blue{\texttt{yuchen.prc@gmail.com}}}
+}
+
+\date{}
+
+\maketitle
+
+\begin{abstract}
+
+
+% \begin{trivlist}
+% \item \textbf{Keywords:} XXX, YYY, ZZZ
+% \end{trivlist}
+
+\end{abstract}
+
+\thispagestyle{empty}
+
+\newpage
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Introduction}
+
+\section*{Acknowledgments}
+We thank the anonymous reviewers of Asiacrypt 2018 for their helpful comments. 
+The first author is supported by the National Natural Science Foundation of China (Grant No. 61772522), 
+Youth Innovation Promotion Association CAS, Key Research Program of Frontier Sciences, CAS (Grant No. QYZDB-SSW-SYS035). 
+
+\bibliographystyle{alpha}
+\bibliography{\path/mycrypto}
+
+
+\newpage
+
+\appendix
+
+\end{document}
