@@ -1,21 +1,32 @@
 \usepackage{fullpage}
+\usepackage{caption}
 \usepackage{latexsym}
-\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{amsmath, amsthm, amsfonts}
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{soul}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{framed}
+\usepackage{boxedminipage}
 \usepackage{cancel,siunitx}
-\usepackage{pifont}  % 特殊符号图标(如对勾)
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{makecell}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{threeparttable}
-\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{url}
 \usepackage{float}
 \usepackage[numbers,sectionbib]{natbib}
+\usepackage{mdframed}
+\usepackage[normalem]{ulem} % 批注
+
 \makeatletter
     \renewcommand\@biblabel[1]{{[#1]\hfill}}
 \makeatother
@@ -37,6 +48,7 @@ shapes, chains, fit, decorations, intersections, positioning}
     roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep = 0.2em, 
       node distance=0em, minimum height=1.5em},
     rectanglenode/.style = {draw, rectangle, inner sep = 0em, node distance=0em},
+    ellipsenode/.style = {draw, ellipse, inner sep = 0em, node distance=0em},
     textnode/.style  = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\normalsize},
     smalltextnode/.style  = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\small},
     circlenode/.style = {draw, circle, auto, inner sep = 0em, node distance=0em, minimum size=1.5em}, 
@@ -44,10 +56,6 @@ shapes, chains, fit, decorations, intersections, positioning}
     connect/.style = {black,->}, 
     every text node part/.style={align=center}
 }
-
-
-\usepackage{framed}
-\usepackage{boxedminipage}
 
 % define the colors
 \newcommand{\blue}[1]{{\color{blue} #1}}
@@ -64,6 +72,11 @@ shapes, chains, fit, decorations, intersections, positioning}
 
 \colorlet{lightgray}{gray!20}
 \colorlet{darkgray}{gray!100}
+
+% define notions
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\NP}{\mathbf{NP}}
+\newcommand{\coNP}{\textup{co-}\mathbf{NP}}
 
 % define shorthands
 \newcommand{\define}{\stackrel{\textup{def}}{=}}
@@ -87,8 +100,8 @@ shapes, chains, fit, decorations, intersections, positioning}
 \newcommand{\Ovefy}{\mathcal{O}_\mathsf{vefy}(\cdot,\cdot)}
 \newcommand{\Otag}{\mathcal{O}_\mathsf{tag}(\cdot)}
 \newcommand{\Osign}{\mathcal{O}_\mathsf{sign}}
-\newcommand{\Odecaps}{\mathcal{O}_\mathsf{decaps}}
 \newcommand{\Odec}{\mathcal{O}_\mathsf{dec}}
+\newcommand{\Odecaps}{\mathcal{O}_\mathsf{decaps}}
 \newcommand{\OregH}{\mathcal{O}_\mathsf{regH}}
 \newcommand{\OregC}{\mathcal{O}_\mathsf{regC}}
 \newcommand{\Oreveal}{\mathcal{O}_\mathsf{reveal}}
@@ -138,8 +151,6 @@ shapes, chains, fit, decorations, intersections, positioning}
 
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
-
-\usepackage[normalem]{ulem} % 批注
 
 \newcommand{\redul}{\bgroup\markoverwith{\textcolor{red}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 红色下划线
 \newcommand{\blueul}{\bgroup\markoverwith{\textcolor{blue}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 蓝色下划线
