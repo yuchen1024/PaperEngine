@@ -1,0 +1,1 @@
+Improve and polish the academic writing of the following paragraph from our paper entitled "$k$-Out-Of-$n$ Proofs and Applications to Privacy-Preserving Cryptocurrencies" going to submit to CRYPTO 2025.
