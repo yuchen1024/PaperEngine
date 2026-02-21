@@ -48,6 +48,10 @@
 \usepackage[numbers,sectionbib]{natbib}
 
 
+\ifChinese
+\usepackage[UTF8, punct]{ctex}
+\fi
+
 \makeatletter
     \renewcommand\@biblabel[1]{{[#1]\hfill}}
 \makeatother
@@ -112,7 +116,7 @@ shapes, chains, fit, decorations, intersections, positioning}
 \newcommand{\entropy}{\mathsf{H}}
 \newcommand{\minentropy}{\mathsf{H}_\infty}
 \newcommand{\avminentropy}{\tilde{\mathsf{H}}_\infty}
-\newcommand{\AdvA}{\mathsf{Adv}_\mathcal{A}(\lambda)}
+\newcommand{\AdvA}{\mathsf{Adv}_\mathcal{A}}
 
 \newcommand{\outV}{\text{out}_V}
 \newcommand{\viewV}{\text{view}_V}
@@ -125,6 +129,7 @@ shapes, chains, fit, decorations, intersections, positioning}
 \newcommand{\Otag}{\mathcal{O}_\mathsf{tag}(\cdot)}
 \newcommand{\Osign}{\mathcal{O}_\mathsf{sign}}
 \newcommand{\Odec}{\mathcal{O}_\mathsf{dec}}
+\newcommand{\Odecrypt}{\mathcal{O}_\mathsf{decrypt}}
 \newcommand{\Odecaps}{\mathcal{O}_\mathsf{decaps}}
 \newcommand{\OregH}{\mathcal{O}_\mathsf{regH}}
 \newcommand{\OregC}{\mathcal{O}_\mathsf{regC}}
@@ -132,6 +137,7 @@ shapes, chains, fit, decorations, intersections, positioning}
 \newcommand{\Oibedecaps}{\mathcal{O}_\mathsf{decaps}(\cdot, \cdot)}
 \newcommand{\Osim}{\mathcal{O}_\mathsf{sim}}
 \newcommand{\Oenc}{\mathcal{O}_\mathsf{enc}}
+\newcommand{\Oencrypt}{\mathcal{O}_\mathsf{encrypt}}
 \newcommand{\Oext}{\mathcal{O}_\mathsf{ext}}
 \newcommand{\Oconstrain}{\mathcal{O}_\mathsf{constrain}}
 \newcommand{\Oevalempty}{\mathcal{O}_\mathsf{eval}(\$)}
@@ -178,6 +184,9 @@ shapes, chains, fit, decorations, intersections, positioning}
 \newtheorem{construction}{Construction}[section]
 \newtheorem{exercise}{Exercise}[section]
 \newtheorem{discussion}{Discussion}[section]
+
+\newtheorem{quiz}{Quiz}
+\newtheorem{exam}{Exam}
 
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}[section]

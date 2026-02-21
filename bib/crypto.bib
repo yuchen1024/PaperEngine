@@ -50,7 +50,7 @@
 
 @misc{SM2,
     title = {SM2椭圆曲线公钥密码算法},
-    note = {\url{https://www.rfc-editor.org/rfc/rfc8017.html}}
+     note = {\url{https://www.oscca.gov.cn/sca/xxgk/2010-12/17/1002386/files/b791a9f908bb4803875ab6aeeb7b4e03.pdf}}
 }
 
 @misc{SEC-1,
@@ -352,6 +352,14 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%% SIGNATURES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@techreport{Lamport-TechReport-1979,
+	author = {Leslie Lamport},
+	title = {Constructing Digital Signatures from a One Way Function},
+	year = {1979},
+	number = {CSL-98}
+}
+
+
 @article{Rabin-TechReport-1979,
 	author = {Michael Rabin},
 	journal = {MIT Laboratory for Computer Science, Technical Report TR-212},
@@ -9585,10 +9593,10 @@
     note         = {\url{https://eprint.iacr.org/2020/352}}
 }
 
-@inproceedings{ZCLZL-USENIX-2023,
+@inproceedings{ZCLZL-USENIX-Security-2023,
     author  = {Cong Zhang and Yu Chen and Weiran Liu and Min Zhang and Dongdai Lin},
     title   = {Optimal Private Set Union from Multi-Query Reverse Private Membership Test},
-    booktitle = {USENIX 2023},
+    booktitle = {USENIX Security 2023},
     note    = {\url{https://eprint.iacr.org/2022/358}},
     year    = {2023}
 }
@@ -9667,12 +9675,36 @@
     year      = {2022}
 }
 
-@inpreceedings{TCLZ-CCS-2023,
+@inproceedings{TCLZ-ACM-CCS-2023,
     author = {Binbin Tu and Yu Chen and Qi Liu and Cong Zhang},
     title = {Fast Unbalanced Private Set Union from Fully Homomorphic Encryption},
     booktitle = {{ACM CCS} 2023}, 
     year = {2023}
 }
+
+@inproceedings{ZCLPHWW-ACM-CCS-2024,
+  	author       = {Cong Zhang and Yu Chen and Weiran Liu and Liqiang Peng and Meng Hao and Anyu Wang and Xiaoyun Wang},
+  	title        = {Unbalanced Private Set Union with Reduced Computation and Communication},
+  	booktitle    = {Proceedings of the 2024 on {ACM} {SIGSAC} Conference on Computer and Communications Security, {CCS} 2024},
+  	pages        = {1434-1447},
+  	publisher    = {{ACM}},
+  	year         = {2024}
+}
+
+@inproceedings{TBZCC-USENIX-Security-2025,
+    author = {Binbin Tu, Yujie Bai, Cong Zhang, Yang Cao, Yu Chen},
+    title = {Fast Enhanced Private Set Union in the Balanced and Unbalanced Scenarios},
+    booktitle = {{USENIX Security} 2025}, 
+    year = {2025}
+}
+
+@inproceedings{DZBC-USENIX-Security-2025,
+    author = {Minglang Dong, Cong Zhang, Yujie Bai, Yu Chen},
+    title = {Efficient Multi-Party Private Set Union Without Non-Collusion Assumptions},
+    booktitle = {{USENIX Security} 2025}, 
+    year = {2025}
+}
+
 
 @inproceedings{CGP-ASIACRYPT-2020,
   	author    = {Melissa Chase and Esha Ghosh and Oxana Poburinnaya},
@@ -10279,4 +10311,280 @@
   	year         = {2024}
 }
 
+@inproceedings{Impagliazzo-SCT-1995,
+	author       = {Russell Impagliazzo},
+  	title        = {A Personal View of Average-Case Complexity},
+  	booktitle    = {The Tenth Annual Structure in Complexity Theory Conference},
+  	pages        = {134-147},
+  	publisher    = {{IEEE} Computer Society},
+  	year         = {1995}
+}
 
+@inproceedings{WSPC-ASIACRYPT-2023,
+  	author       = {Yuyu Wang and Chuanjie Su and Jiaxin Pan and Yu Chen},
+  	title        = {A Simple and Efficient Framework of Proof Systems for {NP}},
+  	booktitle    = {Advances in Cryptology - {ASIACRYPT} 2023},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {14439},
+  	pages        = {174-207},
+  	publisher    = {Springer},
+  	year         = {2023}
+}
+
+@article{Maurer-DCC-2015,
+  	author       = {Ueli Maurer},
+  	title        = {Zero-knowledge proofs of knowledge for group homomorphisms},
+  	journal      = {Des. Codes Cryptogr.},
+  	volume       = {77},
+  	number       = {2-3},
+  	pages        = {663-676},
+  	year         = {2015}
+}
+
+
+@inproceedings{Boudot-EUROCRYPT-2000,
+  	author       = {Fabrice Boudot},
+  	title        = {Efficient Proofs that a Committed Number Lies in an Interval},
+  	booktitle    = {Advances in Cryptology - {EUROCRYPT} 2000},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {1807},
+  	pages        = {431-444},
+  	publisher    = {Springer},
+  	year         = {2000}
+}
+
+@inproceedings{BCCGGP-ESORICS-2015,
+  	author       = {Jonathan Bootle and Andrea Cerulli and Pyrros Chaidos and Essam Ghadafi and Jens Groth and Christophe Petit},
+  	title        = {Short Accountable Ring Signatures Based on {DDH}},
+  	booktitle    = {Computer Security - {ESORICS} 2015 - 20th European Symposium on Research in Computer Security},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {9326},
+  	pages        = {243--265},
+  	publisher    = {Springer},
+  	year         = {2015}
+}
+
+@inproceedings{ACF-CRYPTO-2021,
+  	author       = {Thomas Attema and Ronald Cramer and Serge Fehr},
+  	title        = {Compressing Proofs of k-Out-Of-n Partial Knowledge},
+  	booktitle    = {Advances in Cryptology - {CRYPTO} 2021},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {12828},
+  	pages        = {65-91},
+  	publisher    = {Springer},
+  	year         = {2021}
+}
+
+@inproceedings{BLS-CRYPTO-2019,
+  	author       = {Jonathan Bootle and Vadim Lyubashevsky and Gregor Seiler},
+  	title        = {Algebraic Techniques for Short(er) Exact Lattice-Based Zero-Knowledge Proofs},
+  	booktitle    = {Advances in Cryptology - {CRYPTO} 2019 - 39th Annual International Cryptology Conference},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {11692},
+  	pages        = {176-202},
+  	publisher    = {Springer},
+  	year         = {2019}
+}
+
+@inproceedings{YAZXYW-CRYPTO-2019,
+  	author       = {Rupeng Yang and Man Ho Au and Zhenfei Zhang and Qiuliang Xu and Zuoxia Yu and William Whyte},
+  	title        = {Efficient Lattice-Based Zero-Knowledge Arguments with Standard Soundness: Construction and Applications},
+  	booktitle    = {Advances in Cryptology - {CRYPTO} 2019 - 39th Annual International Cryptology Conference},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {11692},
+  	pages        = {147-175},
+  	publisher    = {Springer},
+  	year         = {2019}
+}
+
+@inproceedings{LNP-CRYPTO-2022,
+  	author       = {Vadim Lyubashevsky and Ngoc Khanh Nguyen and Maxime Plan{\c{c}}on},
+  	title        = {Lattice-Based Zero-Knowledge Proofs and Applications: Shorter, Simpler, and More General},
+  	booktitle    = {Advances in Cryptology - {CRYPTO} 2022 - 42nd Annual International Cryptology Conference},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {13508},
+  	pages        = {71-101},
+  	publisher    = {Springer},
+  	year         = {2022}
+}
+
+@inproceedings{GLSY-ASIACRYPT-2004,
+  	author       = {Rosario Gennaro and Darren Leigh and Ravi Sundaram and William S. Yerazunis},
+  	title        = {Batching Schnorr Identification Scheme with Applications to Privacy-Preserving
+                  Authorization and Low-Bandwidth Communication Devices},
+  	booktitle    = {Advances in Cryptology - {ASIACRYPT} 2004, 10th International Conference
+                  on the Theory and Application of Cryptology and Information Security},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {3329},
+  	pages        = {276-292},
+  	publisher    = {Springer},
+ 	year         = {2004}
+}
+
+@inproceedings{CGMA-FOCS-1985,
+  	author       = {Benny Chor and Shafi Goldwasser and Silvio Micali and Baruch Awerbuch},
+  	title        = {Verifiable Secret Sharing and Achieving Simultaneity in the Presence of Faults (Extended Abstract)},
+  	booktitle    = {26th Annual Symposium on Foundations of Computer Science},
+  	pages        = {383-395},
+  	publisher    = {{IEEE} Computer Society},
+  	year         = {1985}
+}
+
+@inproceedings{Feldman-FOCS-1987,
+  	author       = {Paul Feldman},
+  	title        = {A Practical Scheme for Non-interactive Verifiable Secret Sharing},
+  	booktitle    = {28th Annual Symposium on Foundations of Computer Science},
+  	pages        = {427-437},
+  	publisher    = {{IEEE} Computer Society},
+  	year         = {1987}
+}
+
+@inproceedings{CFQ-CCS-2019,
+  	author       = {Matteo Campanelli and Dario Fiore and Ana{\"{\i}}s Querol},
+  	title        = {LegoSNARK: Modular Design and Composition of Succinct Zero-Knowledge Proofs},
+  	booktitle    = {Proceedings of the 2019 {ACM} {SIGSAC} Conference on Computer and Communications Security, {CCS} 2019},
+  	pages        = {2075-2092},
+  	publisher    = {{ACM}},
+  	year         = {2019}
+}
+
+@inproceedings{ABCGOT-PKC-2022,
+  	author       = {Diego F. Aranha and Emil Madsen Bennedsen and Matteo Campanelli and
+                  Chaya Ganesh and Claudio Orlandi and Akira Takahashi},
+  	title        = {{ECLIPSE:} Enhanced Compiling Method for Pedersen-Committed zkSNARK Engines},
+  	booktitle    = {Public-Key Cryptography - {PKC} 2022 - 25th {IACR} International Conference
+                  on Practice and Theory of Public-Key Cryptography},
+  	series       = {Lecture Notes in Computer Science},
+  	volume       = {13177},
+  	pages        = {584-614},
+  	publisher    = {Springer},
+  	year         = {2022}
+}
+
+@inproceedings{Yao-FOCS-1982,
+  	author       = {Andrew Chi{-}Chih Yao},
+  	title        = {Protocols for Secure Computations (Extended Abstract)},
+  	booktitle    = {23rd Annual Symposium on Foundations of Computer Science},
+  	pages        = {160-164},
+  	publisher    = {{IEEE} Computer Society},
+  	year         = {1982}
+}
+
+@inproceedings{LP-EUROCRYPT-2007,
+    author       = {Yehuda Lindell and Benny Pinkas},
+    title        = {An Efficient Protocol for Secure Two-Party Computation in the Presence of Malicious Adversaries},
+    booktitle    = {Advances in Cryptology - {EUROCRYPT} 2007},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {4515},
+    pages        = {52-78},
+    publisher    = {Springer},
+    year         = {2007}
+}
+
+@inproceedings{NO-TCC-2009,
+    author       = {Jesper Buus Nielsen and Claudio Orlandi},
+    title        = {LEGO for Two-Party Secure Computation},
+    booktitle    = {Theory of Cryptography, 6th Theory of Cryptography Conference, {TCC} 2009},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {5444},
+    pages        = {368-386},
+    publisher    = {Springer},
+    year         = {2009}
+}
+
+@inproceedings{KRRW-CRYPTO-2018,
+    author       = {Jonathan Katz and Samuel Ranellucci and Mike Rosulek and Xiao Wang},
+    title        = {Optimizing Authenticated Garbling for Faster Secure Two-Party Computation},
+    booktitle    = {Advances in Cryptology - {CRYPTO} 2018},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {10993},
+    pages        = {365-391},
+    publisher    = {Springer},
+    year         = {2018}
+}
+
+@inproceedings{CKMZ-CRYPTO-2014,
+    author       = {Seung Geol Choi and Jonathan Katz and Alex J Malozemoff and Vassilis Zikas},
+    title        = {Efficient Three-Party Computation from Cut-and-Choose},
+    booktitle    = {Advances in Cryptology - {CRYPTO} 2014},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {8617},
+    pages        = {513-530},
+    publisher    = {Springer},
+    year         = {2014}
+}
+
+@inproceedings{LPSY-CRYPTO-2015,
+    author       = {Yehuda Lindell and Benny Pinkas and Nigel P Smart and Avishay Yanai},
+    title        = {Efficient Constant Round Multi-Party Computation Combining BMR and SPDZ},
+    booktitle    = {Advances in Cryptology - {CRYPTO} 2015},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {9216},
+    pages        = {319-338},
+    publisher    = {Springer},
+    year         = {2015}
+}
+
+@inproceedings{YWZ-CCS-2020,
+    author       = {Kang Yang and Xiao Wang and Jiang Zhang},
+    title        = {More Efficient MPC from Improved Triple Generation and Authenticated Garbling},
+    booktitle    = {Proceedings of the 2020 {ACM} {SIGSAC} Conference on Computer and Communications Security, {CCS} 2020},
+    pages        = {1627-1646},
+    year         = {2020}
+}
+
+@inproceedings{MRZ-CCS-2015,
+    author       = {Payman Mohassel and Mike Rosulek and Ye Zhang},
+    title        = {Fast and Secure Three-Party Computation: The Garbled Circuit Approach},
+    booktitle    = {Proceedings of the 2015 {ACM} {SIGSAC} Conference on Computer and Communications Security, {CCS} 2015},
+    pages        = {591-602},
+    year         = {2015}
+}
+
+@inproceedings{LN-CCS-2017,
+    author       = {Yehuda Lindell and Ariel Nof},
+    title        = {A Framework for Constructing Fast MPC over Arithmetic Circuits with Malicious Adversaries and An Honest-Majority},
+    booktitle    = {Proceedings of the 2017 {ACM} {SIGSAC} Conference on Computer and Communications Security, {CCS} 2017},
+    pages        = {259-276},
+    year         = {2017}
+}
+
+@inproceedings{CGHIKLN-CRYPTO-2018,
+    author       = {Koji Chida and Daniel Genkin and Koki Hamada and Dai Ikarashi and Ryo Kikuchi and Yehuda Lindell and Ariel Nof},
+    title        = {Fast Large-Scale Honest-Majority MPC for Malicious Adversaries},
+    booktitle    = {Advances in Cryptology - {CRYPTO} 2018},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {10993},
+    pages        = {34-64},
+    publisher    = {Springer},
+    year         = {2018}
+}
+
+@inproceedings{BGIN-ASIACRYPT-2020,
+    author       = {Elette Boyle and Niv Gilboa and Yuval Ishai and Ariel Nof},
+    title        = {Efficient Fully Secure Computation via Distributed Zero-Knowledge Proofs},
+    booktitle    = {Advances in Cryptology - {ASIACRYPT} 2020},
+    series       = {Lecture Notes in Computer Science},
+    volume       = {12493},
+    pages        = {244-276},
+    publisher    = {Springer},
+    year         = {2020}
+}
+
+@inproceedings{WRK-CCS-2017,
+    author       = {Xiao Wang and Samuel Ranellucci and Jonathan Katz},
+    title        = {Authenticated Garbling and Efficient Maliciously Secure Two-Party Computation},
+    booktitle    = {Proceedings of the 2017 {ACM} {SIGSAC} Conference on Computer and Communications Security, {CCS} 2017},
+    pages        = {21-37},
+    publisher    = {{ACM}},
+    year         = {2017}
+}
+
+@article{GN-ePrint-2018,
+  	author       = {Brandon Goodell and Sarang Noether},
+  	title        = {Thring Signatures and their Applications to Spender-Ambiguous Digital Currencies},
+  	journal      = {{IACR} Cryptol. ePrint Arch.},
+  	pages        = {774},
+  	year         = {2018},
+  	url          = {https://eprint.iacr.org/2018/774},
+}

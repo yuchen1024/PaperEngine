@@ -38,14 +38,17 @@
 \usepackage{mathrsfs} % 数学字体
 \usepackage{tabularx} % 表格
 \usepackage{threeparttable} % 三线表
+\usepackage{booktabs}
 \usepackage{array}
 \usepackage{multirow}
+\usepackage[table]{xcolor} % 可选：用于添加颜色
 \usepackage{makecell} % 处理表格中分行分栏
 \usepackage{diagbox}
 \usepackage{soul}
 \usepackage{cancel,siunitx}
 \usepackage{multimedia}
 \usepackage{caption}
+\usepackage[absolute, overlay]{textpos} % 固定图片位置
 
 
 \usepackage[ruled,lined,linesnumbered]{algorithm2e} % 算法框图
@@ -64,7 +67,7 @@
 %\usepackage{graphicx} % 插图包
 \usepackage{xcolor}   % 增强色彩包
 \usepackage{tikz}     % 绘图包
-\usetikzlibrary{calc, matrix, patterns, backgrounds, arrows, shapes, snakes, circuits, circuits.logic.US, 
+\usetikzlibrary{calc, matrix, patterns, backgrounds, arrows, arrows.meta, shapes, snakes, circuits, circuits.logic.US, 
 chains, fit, decorations, intersections, positioning}
 
 \tikzset{
@@ -93,7 +96,6 @@ chains, fit, decorations, intersections, positioning}
 \renewcommand{\cite}[1]{\blue{\oldcite{#1}}}
 
 \renewcommand\bibname{References}
-% \renewcommand{\bibfont}{\scriptsize}
 
 
 \newcommand{\cmark}{\ding{51}}%
@@ -117,6 +119,15 @@ chains, fit, decorations, intersections, positioning}
 \definecolor{lightmidnightblue}{rgb}{0.2, 0.2, 0.7}
 \definecolor{mycolor}{rgb}{51,51,178}
 \definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+\definecolor{orchid}{rgb}{0.855, 0.439, 0.839} % RGB values for orchid
+
+% dedicate for PSO
+% \definecolor{PSOcolor}{blue!30}
+% \definecolor{PMTcolor}{darkgreen!30}
+% \definecolor{OTcolor}{purple!30}
+% \definecolor{OPRFcolor}{gray!30}
+% \definecolor{PEQTcolor}{orange!30}
+% \definecolor{MISCcolor}{magenta!30}
 
 \newcommand{\blue}[1]{{\color{blue} #1}}
 \newcommand{\white}[1]{{\color{white} #1}}
@@ -128,8 +139,12 @@ chains, fit, decorations, intersections, positioning}
 \newcommand{\yellow}[1]{{\color{yellow} #1}}
 \newcommand{\magenta}[1]{{\color{magenta} #1}}
 \newcommand{\gray}[1]{{\color{gray} #1}}
+\newcommand{\lightgray}[1]{{\color{gray!20} #1}}
 \newcommand{\purple}[1]{{\color{purple} #1}}
 \newcommand{\mdblue}[1]{{\color{lightmidnightblue} #1}}
+
+
+
 
 \newcommand{\codecomment}[1]{{\color{blue} //#1}}
 
@@ -144,6 +159,7 @@ chains, fit, decorations, intersections, positioning}
 \newcommand{\greenul}{\bgroup\markoverwith{\textcolor{green}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 绿色下划线
 \newcommand{\darkgreenul}{\bgroup\markoverwith{\textcolor{darkgreen}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 绿色下划线
 \newcommand{\blackul}{\bgroup\markoverwith{\textcolor{black}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 黑色下划线
+\newcommand{\lightgrayul}{\bgroup\markoverwith{\textcolor{gray!20}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon} % 灰色下划线
 
 
 \makeatletter % 批注颜色
@@ -194,6 +210,7 @@ chains, fit, decorations, intersections, positioning}
 \newcommand{\avminentropy}{\tilde{\mathsf{H}}_\infty}
 \newcommand{\Phisb}{\Phi_\textup{brs}^\textup{srs}}
 
+\newcommand{\Oracle}{\mathcal{O}}
 \newcommand{\Osign}{\mathcal{O}_\mathsf{sign}}
 \newcommand{\Odec}{\mathcal{O}_\mathsf{dec}}
 
@@ -215,13 +232,17 @@ chains, fit, decorations, intersections, positioning}
 % \newtheorem{discussion}{Discussion}[section]
 
 
-
-\newenvironment{remarkblock}[0]{%
+\newenvironment{noteblock}[0]{%
 \setbeamercolor{block body}{bg=blue!10,fg=black}
 \begin{block}{}}
 {\end{block}}
 
-\newenvironment{noteblock}[0]{%
+\newenvironment{remarkblock}[0]{%
+\setbeamercolor{block body}{bg=darkgreen!10,fg=black}
+\begin{block}{}}
+{\end{block}}
+
+\newenvironment{refblock}[0]{%
 \setbeamercolor{block body}{bg=gray!20,fg=black}
 \begin{block}{}}
 {\end{block}}
@@ -234,14 +255,36 @@ chains, fit, decorations, intersections, positioning}
 % 定义假设环境
 \newenvironment<>{assumption}[1]{%
   \setbeamercolor{block title}{bg=orange,fg=white}
-  \setbeamercolor{block body}{bg=orange!20,fg=black}
+  \setbeamercolor{block body}{bg=orange!10,fg=black}
   \begin{block}#2{#1}}{\end{block}
 }
 
 % 定义构造环境
-\newenvironment<>{myconstruction}[1]{%
-  \setbeamercolor{block title}{bg=orange,fg=white}
-  \setbeamercolor{block body}{bg=orange!20,fg=black}
+\newenvironment<>{construction}[1]{%
+  \setbeamercolor{block title}{bg=orchid,fg=white}
+  \setbeamercolor{block body}{bg=orchid!20,fg=black}
+  \begin{block}#2{#1}}{\end{block}
+}
+
+
+% 定义练习环境
+\newenvironment<>{exercise}[1]{%
+  \setbeamercolor{block title}{bg=darkgreen,fg=white}
+  \setbeamercolor{block body}{bg=darkgreen!10,fg=black}
+  \begin{block}#2{#1}}{\end{block}
+}
+
+% 定义例子环境
+\newenvironment<>{example}[1]{%
+  \setbeamercolor{block title}{bg=darkgreen,fg=white}
+  \setbeamercolor{block body}{bg=darkgreen!10,fg=black}
+  \begin{block}#2{#1}}{\end{block}
+}
+
+% 定义结论环境
+\newenvironment<>{conclusion}[1]{%
+  \setbeamercolor{block title}{bg=red,fg=white}
+  \setbeamercolor{block body}{bg=red!10,fg=black}
   \begin{block}#2{#1}}{\end{block}
 }
 
@@ -251,10 +294,13 @@ chains, fit, decorations, intersections, positioning}
     \setbeamercolor{block title example}{}
     \setbeamercolor{block body example}{}
     \def\inserttheoremblockenv{exampleblock}
-  }
+}
 \makeatother
-\theoremstyle{mystyle}
-\newtheorem*{construction}{Construction}
+
+
+
+% \theoremstyle{mystyle}
+% \newtheorem*{construction}{Construction}
 
 \newenvironment<>{greenbox}[1]{
 \begin{tcolorbox}[colback=green!5,colframe=green!40!black]#1}
