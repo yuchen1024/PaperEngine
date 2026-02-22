@@ -1,0 +1,148 @@
+%=====================================================================
+% Paper Preamble: Optimized for Cryptography Research
+%=====================================================================
+
+%----- 0. 错误屏蔽与性能优化 -----%
+\usepackage{silence}
+\WarningFilter{latex}{Invalid UTF-8 byte}
+\WarningFilter{latex}{`h' float specifier changed to `ht'}
+
+%----- 1. 语言控制逻辑 -----%
+\usepackage{etoolbox}
+\providecommand{\ifChinese}{\iffalse} % 兜底定义，防止主文件没写 \newif
+
+\ifChinese
+    \usepackage[UTF8, punct]{ctex}
+\fi
+
+%----- 2. 数学包 (Types: PascalCase) -----%
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{mathrsfs, amsbsy, mathtools}
+\usepackage{autobreak}
+\usepackage{siunitx}
+
+%----- 3. 图片与颜色 -----%
+\usepackage{graphicx}
+\usepackage{subcaption} 
+\usepackage{xcolor}
+\usepackage{float}
+
+%----- 4. 表格增强 -----%
+\usepackage{caption}
+\usepackage{colortbl, makecell, tabularx, multirow, threeparttable, booktabs}
+
+%----- 5. 标注、列表与排版 -----%
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+\usepackage{pifont} % 必须加载，用于对勾和叉
+\usepackage{fullpage, setspace, framed, mdframed}
+\usepackage{enumitem}
+\setlist{nosep}
+
+%----- 6. 算法环境 -----%
+\usepackage[ruled, vlined, linesnumbered, algo2e]{algorithm2e}
+\ifChinese
+    \SetAlgorithmName{算法}{算法}{算法列表}
+\else
+    \SetAlgorithmName{Algorithm}{Algorithm}{List of Algorithms}
+\fi
+
+%----- 7. TikZ 绘图 -----%
+\usepackage{tikz, pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{
+    matrix, fit, calc, patterns, backgrounds, 
+    arrows.meta, shapes, chains, decorations.pathreplacing, 
+    intersections, positioning, external
+}
+
+\tikzset{
+    >=Stealth,
+    shapenode/.style = {draw, rectangle, fill=none, minimum size=0.5cm, minimum height=0.6cm, minimum width=0.6cm, align=center, font=\normalsize}, 
+    roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep=0.5em, align=center},
+    textnode/.style  = {draw=none, fill=none, align=center, font=\normalsize},
+    circlenode/.style = {draw, circle, minimum size=1.5em, inner sep=0pt, align=center},
+    dotnode/.style = {draw, fill=black, circle, minimum size=0.2em, inner sep=0pt},
+    connect/.style = {black, ->, line width=0.5pt}
+}
+
+%----- 8. 定理环境 -----%
+\ifChinese
+    \newtheorem{theorem}{定理}[section]
+    \newtheorem{lemma}[theorem]{引理}
+    \newtheorem{claim}[theorem]{断言}
+    \newtheorem{proposition}[theorem]{命题}
+    \newtheorem{corollary}[theorem]{推论}
+    \newtheorem{definition}{定义}[section]
+    \newtheorem{example}{例}[section]
+    \newtheorem{remark}{注}[section]
+    \renewcommand{\proofname}{\textbf{证明}}
+    \newenvironment{solution}{\begin{proof}[\textbf{解}]}{\end{proof}}
+\else
+    \theoremstyle{plain}
+    \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{claim}[theorem]{Claim}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newtheorem{corollary}[theorem]{Corollary}
+    \theoremstyle{definition}
+    \newtheorem{definition}{Definition}[section]
+    \newtheorem{example}{Example}[section]
+    \theoremstyle{remark}
+    \newtheorem{remark}{Remark}[section]
+\fi
+
+%----- 9. 符号补丁 (修复日志中的 Undefined Control Sequence) -----%
+% 修复 \checkmark 和 \xmark 的定义，确保表格正常
+\let\oldcheckmark\checkmark
+\renewcommand{\checkmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
+
+%----- 10. 颜色与密码学宏 -----%
+\definecolor{LightMidnightBlue}{rgb}{0.2, 0.2, 0.7}
+\definecolor{DarkGreen}{rgb}{0.0,0.5,0.0}
+
+\newcommand{\Oracle}{\mathcal{O}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\kP}{\mathbf{P}}
+\newcommand{\kNP}{\mathbf{NP}}
+\newcommand{\define}{\stackrel{\textup{def}}{=}}
+\newcommand{\sample}{\xleftarrow{\textup{\tiny R}}}
+\newcommand{\poly}{\textup{poly}}
+\newcommand{\AdvA}{\mathsf{Adv}_\mathcal{A}}
+\newcommand{\TaihangAssert}[1]{\texttt{TAIHANG\_ASSERT}(#1)}
+
+%----- 11. 引用与超链接 (加载顺序关键) -----%
+\usepackage[numbers, sectionbib, sort&compress]{natbib}
+\setlength{\bibsep}{0.5ex}
+
+\makeatletter
+    \renewcommand\@biblabel[1]{{[#1]\hfill}}
+\makeatother
+
+\usepackage[colorlinks, anchorcolor=blue, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage[title, titletoc, header]{appendix}
+
+\usepackage[capitalize]{cleveref}
+\ifChinese
+    \crefname{theorem}{定理}{定理}
+    \crefname{figure}{图}{图}
+    \crefname{table}{表}{表}
+    \crefname{algorithm}{算法}{算法}
+\fi
+
+%----- 12. 自定义环境 -----%
+\newenvironment{MyItemize}{\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt]}{\end{itemize}}
+\newenvironment{MyEnumerate}{\begin{enumerate}[leftmargin=*, itemsep=1pt, parsep=0pt]}{\end{enumerate}}
+
+\makeatletter
+\@ifclassloaded{beamer}{}{
+    \newenvironment{noteblock}{
+        \begin{mdframed}[backgroundcolor=gray!10, linecolor=gray!50, roundcorner=2pt, innerleftmargin=5pt, innerrightmargin=5pt, innertopmargin=5pt, innerbottommargin=5pt]
+    }{
+        \end{mdframed}
+    }
+}
+\makeatother
+
