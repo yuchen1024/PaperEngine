@@ -1,0 +1,245 @@
+% ==============================================================================
+% 1. CHINESE LANGUAGE SUPPORT (macOS Optimized)
+% ==============================================================================
+% fontset=none prevents ctex from auto-loading fonts that might conflict
+\usepackage[UTF8, fontset=none]{ctex}
+
+% Use -RawFeature={script=CJK} to stop the font engine from looking for 
+% the CJK script tag, which silences the warnings.
+\setCJKmainfont{Songti SC}[RawFeature={-script=CJK}]
+\setCJKsansfont{Heiti SC}[RawFeature={-script=CJK}]
+\setCJKmonofont{Kaiti SC}[RawFeature={-script=CJK}]
+
+% Define the Kai family
+\setCJKfamilyfont{kai}{Kaiti SC}[RawFeature={-script=CJK}]
+
+% Ensure \kaishu is defined and points to our family
+\providecommand{\kaishu}{\CJKfamily{kai}}
+\renewcommand{\kaishu}{\CJKfamily{kai}}
+
+% --- Set Kaiti as the Default Chinese Font ---
+\AtBeginDocument{\kaishu}
+
+% ==============================================================================
+% 2. BEAMER THEME & VISUAL STYLE
+% ==============================================================================
+\usetheme{default}
+\usecolortheme{orchid}
+\useinnertheme{rounded}
+\usefonttheme{professionalfonts}
+
+% Global color settings for Title and Frame Titles
+\setbeamercolor{title}{fg=lightmidnightblue}
+\setbeamercolor{frametitle}{fg=lightmidnightblue}
+
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}[frame number]
+\setbeamerfont{footnote}{size=\small}
+
+% ==============================================================================
+% 3. ESSENTIAL MATH & SYMBOLS
+% ==============================================================================
+\usepackage{amsmath, amssymb, amsfonts, mathrsfs}
+\usepackage{cancel, siunitx}
+\usepackage{wasysym, pifont}
+
+% ==============================================================================
+% 4. TABLES & ALIGNMENT
+% ==============================================================================
+\usepackage{colortbl}
+\usepackage{tabularx, booktabs, array, multirow, makecell, diagbox, threeparttable}
+
+% ==============================================================================
+% 5. GRAPHICS, COLOR & MULTIMEDIA
+% ==============================================================================
+\usepackage{tcolorbox, graphicx, caption}
+\usepackage[absolute, overlay]{textpos}
+%\usepackage{multimedia, animate}
+% ==============================================================================
+% 6. TIKZ & DRAWING (Updated: Removed 'snakes', added 'decorations')
+% ==============================================================================
+\usepackage{tikz}
+\usetikzlibrary{
+    calc, 
+    matrix, 
+    patterns, 
+    backgrounds, 
+    arrows, 
+    arrows.meta, 
+    shapes, 
+    circuits, 
+    circuits.logic.US, 
+    chains, 
+    fit, 
+    intersections, 
+    positioning,
+    decorations.pathmorphing, % Replacement for wavy/zigzag snakes
+    decorations.pathreplacing, % Replacement for brace snakes
+    decorations.shapes          % Replacement for shape-based snakes
+}
+
+% --- Custom TikZ Styles ---
+\tikzset{
+    shapenode/.style     = {draw, rectangle, fill=none, auto, node distance=0em, font=\normalsize}, 
+    roundnode/.style     = {draw, rectangle, rounded corners=0.5em, inner sep = 0.2em, node distance=0em, minimum height=1.5em},
+    rectanglenode/.style = {draw, rectangle, inner sep = 0em, node distance=0em, minimum height=2em},
+    textnode/.style      = {draw=none, fill=none, rectangle, minimum size=0cm, inner sep = 0em, auto, node distance=0em, font=\normalsize},
+    smalltextnode/.style = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\small},
+    circlenode/.style    = {circle, draw, auto, inner sep = 0em, node distance=0em}, 
+    ellipsenode/.style   = {draw, ellipse, inner sep = 0em, node distance=0em, minimum height=0em, minimum width=0em},
+    dotnode/.style       = {draw, fill=black, circle, auto, minimum size=0.2em, inner sep = 0em, node distance=0em},  
+    connect/.style       = {black, ->},
+    implies/.style       = {double, double equal sign distance, -implies}, 
+    every text node part/.style={align=center}
+}
+% ==============================================================================
+% 7. ALGORITHMS
+% ==============================================================================
+\usepackage[ruled,lined,linesnumbered]{algorithm2e}
+\IncMargin{1em}
+\SetNlSty{text}{}{:}
+
+% ==============================================================================
+% 8. TEXT ANNOTATION & LAYOUT
+% ==============================================================================
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+\usepackage{framed, boxedminipage, url}
+\usepackage[english]{babel}
+
+% ==============================================================================
+% 9. CUSTOM COLORS
+% ==============================================================================
+\definecolor{lightmidnightblue}{rgb}{0.2, 0.2, 0.7}
+\definecolor{mycolor}{rgb}{51,51,178}
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+\definecolor{orchid}{rgb}{0.855, 0.439, 0.839}
+
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\white}[1]{{\color{white} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\cyan}[1]{{\color{cyan} #1}}
+\newcommand{\green}[1]{{\color{green} #1}}
+\newcommand{\darkgreen}[1]{{\color{darkgreen} #1}}
+\newcommand{\orange}[1]{{\color{orange} #1}}
+\newcommand{\yellow}[1]{{\color{yellow} #1}}
+\newcommand{\magenta}[1]{{\color{magenta} #1}}
+\newcommand{\gray}[1]{{\color{gray} #1}}
+\newcommand{\lightgray}[1]{{\color{gray!20} #1}}
+\newcommand{\purple}[1]{{\color{purple} #1}}
+\newcommand{\mdblue}[1]{{\color{lightmidnightblue} #1}}
+
+% ==============================================================================
+% 10. CUSTOM MACROS & COMMANDS
+% ==============================================================================
+\let\oldcite=\cite                                                                
+\renewcommand{\cite}[1]{\blue{\oldcite{#1}}}
+\renewcommand\bibname{References}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\dash}{\rule{0.05em}{0pt}\rule[0.3em]{0.6em}{0.06em}\rule{0.05em}{0pt}}
+\newcommand{\mydash}{\rule{0.05em}{0pt}\rule[0.35em]{0.5em}{0.05em}}
+\newcommand{\define}{\stackrel{\text{def}}{=}}
+\newcommand{\codecomment}[1]{{\color{blue} //#1}}
+\newcommand{\splitline}{\darkgreen{\rule[0.25\baselineskip]{\textwidth}{0.6pt}}}
+
+\newcommand{\redul}{\bgroup\markoverwith{\textcolor{red}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon}
+\newcommand{\blueul}{\bgroup\markoverwith{\textcolor{blue}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon}
+\newcommand{\greenul}{\bgroup\markoverwith{\textcolor{green}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon}
+\newcommand{\darkgreenul}{\bgroup\markoverwith{\textcolor{darkgreen}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon}
+\newcommand{\blackul}{\bgroup\markoverwith{\textcolor{black}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon}
+\newcommand{\lightgrayul}{\bgroup\markoverwith{\textcolor{gray!20}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon}
+
+\newcommand{\iO}{i\mathcal{O}}
+\newcommand{\diO}{di\mathcal{O}}
+\newcommand{\sample}{\xleftarrow{\textup{\tiny R}}}
+\newcommand{\AdvA}{\mathsf{Adv}_\mathcal{A}(\lambda)}
+\newcommand{\expect}{\mathbb{E}}
+\newcommand{\entropy}{\mathsf{H}}
+\newcommand{\minentropy}{\mathsf{H}_\infty}
+\newcommand{\avminentropy}{\tilde{\mathsf{H}}_\infty}
+\newcommand{\Phisb}{\Phi_\textup{brs}^\textup{srs}}
+\newcommand{\Oracle}{\mathcal{O}}
+\newcommand{\Osign}{\mathcal{O}_\mathsf{sign}}
+\newcommand{\Odec}{\mathcal{O}_\mathsf{dec}}
+
+% ==============================================================================
+% 11. BEAMER TEMPLATE PATCHES
+% ==============================================================================
+\makeatletter
+\newcommand\soulcolor{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color}
+\makeatother
+
+\makeatletter
+\newcommand{\footlineextra}[1]{\gdef\insertfootlineextra{#1}}
+\newbox\footlineextrabox
+\defbeamertemplate*{footline extra}{default}{
+  \begin{beamercolorbox}[ht=2.25ex,dp=1ex,leftskip=\Gm@lmargin]{footline extra}
+    \insertfootlineextra
+  \end{beamercolorbox}
+}
+\addtobeamertemplate{footline}{%
+  \setbox\footlineextrabox=\vbox{\usebeamertemplate*{footline extra}}
+  \vskip -\ht\footlineextrabox
+  \vskip -\dp\footlineextrabox
+  \box\footlineextrabox%
+}{}
+\let\beamer@original@frame=\frame
+\def\frame{\gdef\insertfootlineextra{}\beamer@original@frame}
+\footlineextra{}
+\makeatother
+
+% ==============================================================================
+% 12. THEOREMS & CUSTOM BLOCKS
+% ==============================================================================
+\setbeamertemplate{theorems}[numbered] 
+\theoremstyle{plain}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newenvironment{noteblock}[0]{%
+\setbeamercolor{block body}{bg=blue!10,fg=black}\begin{block}{}}{\end{block}}
+\newenvironment{remarkblock}[0]{%
+\setbeamercolor{block body}{bg=darkgreen!10,fg=black}\begin{block}{}}{\end{block}}
+\newenvironment{refblock}[0]{%
+\setbeamercolor{block body}{bg=gray!20,fg=black}\begin{block}{}}{\end{block}}
+\newenvironment{claim}{\begin{trivlist} \item \textbf{Claim.}}{\end{trivlist}}
+
+\newenvironment<>{assumption}[1]{%
+  \setbeamercolor{block title}{bg=orange,fg=white}
+  \setbeamercolor{block body}{bg=orange!10,fg=black}
+  \begin{block}#2{#1}}{\end{block}}
+\newenvironment<>{construction}[1]{%
+  \setbeamercolor{block title}{bg=orchid,fg=white}
+  \setbeamercolor{block body}{bg=orchid!20,fg=black}
+  \begin{block}#2{#1}}{\end{block}}
+\newenvironment<>{exercise}[1]{%
+  \setbeamercolor{block title}{bg=darkgreen,fg=white}
+  \setbeamercolor{block body}{bg=darkgreen!10,fg=black}
+  \begin{block}#2{#1}}{\end{block}}
+\newenvironment<>{example}[1]{%
+  \setbeamercolor{block title}{bg=darkgreen,fg=white}
+  \setbeamercolor{block body}{bg=darkgreen!10,fg=black}
+  \begin{block}#2{#1}}{\end{block}}
+\newenvironment<>{conclusion}[1]{%
+  \setbeamercolor{block title}{bg=red,fg=white}
+  \setbeamercolor{block body}{bg=red!10,fg=black}
+  \begin{block}#2{#1}}{\end{block}}
+
+\newenvironment<>{greenbox}[1]{\begin{tcolorbox}[colback=green!5,colframe=green!40!black]#1}{\end{tcolorbox}}
+\newenvironment<>{bluebox}[1]{\begin{tcolorbox}[boxsep=0em,colback=white,colframe=blue]#1}{\end{tcolorbox}}
+\newenvironment<>{redbox}[1]{\begin{tcolorbox}[boxsep=0em, colback=white,colframe=red]#1}{\end{tcolorbox}}
+\newenvironment<>{titledredbox}[1][2]{\begin{tcolorbox}[boxsep=0em, colback=white,colframe=red, title=#1]#2}{\end{tcolorbox}}
+\newenvironment<>{orangebox}[1]{\begin{tcolorbox}[colback=white,colframe=orange]#1}{\end{tcolorbox}}
+\newenvironment<>{question}[1]{\begin{center}\itshape{#1}}{\end{center}}
+\newenvironment<>{theoremblock}[1]{\begin{noteblock}\mdblue{Theorem:} #1}{\end{noteblock}}
+\newenvironment<>{lemmablock}[1]{\begin{noteblock}\mdblue{Lemma:} #1}{\end{noteblock}}
+
+\newcommand{\Cloud}[2][180]% [angle], content
+{\begin{tikzpicture}[overlay]
+    \node[align=center, draw, shading=ball, text=white, cloud callout, cloud puffs=17, cloud puff arc=140, 
+      callout pointer segments=3, anchor=pointer, callout relative pointer={(#1:2 cm )}, aspect=4,scale=0.5] at (0.2ex,0.5ex) {#2};
+\end{tikzpicture}}
