@@ -58,12 +58,18 @@
 
 \tikzset{
     >=Stealth,
-    shapenode/.style = {draw, rectangle, fill=none, minimum size=0.5cm, minimum height=0.6cm, minimum width=0.6cm, align=center, font=\normalsize}, 
-    roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep=0.5em, align=center},
-    textnode/.style  = {draw=none, fill=none, align=center, font=\normalsize},
-    circlenode/.style = {draw, circle, minimum size=1.5em, inner sep=0pt, align=center},
-    dotnode/.style = {draw, fill=black, circle, minimum size=0.2em, inner sep=0pt},
-    connect/.style = {black, ->, line width=0.5pt}
+    shapenode/.style = {draw, rectangle, fill=none, minimum size=0.5cm, minimum height=0.6cm, minimum width=0.6cm, 
+    auto, node distance=0em, font=\normalsize}, 
+    roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep = 0em, 
+      node distance=0em, minimum height=1.5em},
+    rectanglenode/.style = {draw, rectangle, inner sep = 0em, node distance=0em},
+    ellipsenode/.style = {draw, ellipse, inner sep = 0em, node distance=0em},
+    textnode/.style  = {draw=none, fill=none, rectangle, node distance=0em, font=\normalsize},
+    smalltextnode/.style  = {draw=none, fill=none, rectangle, minimum size=0.5cm, auto, node distance=0em, font=\small},
+    circlenode/.style = {draw, circle, auto, inner sep = 0em, node distance=0em, minimum size=1.5em}, 
+    dotnode/.style = {draw, fill=black, circle, auto, minimum size=0.1em, inner sep = 0em, node distance=0em},  
+    connect/.style = {black,->}, 
+    every text node part/.style={align=center}
 }
 
 %----- 8. 定理环境 -----%
