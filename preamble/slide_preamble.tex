@@ -45,6 +45,21 @@
 \usepackage{cancel, siunitx}
 \usepackage{wasysym, pifont}
 
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\omark}{\ding{109}}%
+
+\newcommand{\cxmark}{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \makebox[1.1em][c]{%
+    \raisebox{0pt}{\ding{51}}% ✔
+    \kern-0.65em
+    \raisebox{0pt}{\ding{55}}% ✗
+  }%
+  \endgroup
+}
+
 % ==============================================================================
 % 4. TABLES & ALIGNMENT
 % ==============================================================================
