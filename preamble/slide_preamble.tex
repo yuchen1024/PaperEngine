@@ -45,20 +45,6 @@
 \usepackage{cancel, siunitx}
 \usepackage{wasysym, pifont}
 
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\xmark}{\ding{55}}%
-\newcommand{\omark}{\ding{109}}%
-
-\newcommand{\cxmark}{%
-  \begingroup
-  \setlength{\fboxsep}{0pt}%
-  \makebox[1.1em][c]{%
-    \raisebox{0pt}{\ding{51}}% ✔
-    \kern-0.65em
-    \raisebox{0pt}{\ding{55}}% ✗
-  }%
-  \endgroup
-}
 
 % ==============================================================================
 % 4. TABLES & ALIGNMENT
@@ -154,8 +140,21 @@
 \renewcommand{\cite}[1]{\blue{\oldcite{#1}}}
 \renewcommand\bibname{References}
 
-\newcommand{\cmark}{\ding{51}}
-\newcommand{\xmark}{\ding{55}}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\omark}{\ding{109}}%
+
+\newcommand{\cxmark}{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \makebox[1.1em][c]{%
+    \raisebox{0pt}{\ding{51}}% ✔
+    \kern-0.65em
+    \raisebox{0pt}{\ding{55}}% ✗
+  }%
+  \endgroup
+}
+
 \newcommand{\dash}{\rule{0.05em}{0pt}\rule[0.3em]{0.6em}{0.06em}\rule{0.05em}{0pt}}
 \newcommand{\mydash}{\rule{0.05em}{0pt}\rule[0.35em]{0.5em}{0.05em}}
 \newcommand{\define}{\stackrel{\text{def}}{=}}
