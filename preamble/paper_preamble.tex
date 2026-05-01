@@ -57,15 +57,12 @@
 }
 
 \tikzset{
-    highlight/.style={draw=red, line width=1pt, inner sep=2pt},
     >=Stealth,
-    shapenode/.style = {draw, rectangle, fill=none, auto, node distance=0em}, 
-    roundnode/.style = {draw, rectangle, rounded corners=0.5em, inner sep = 0em, node distance=0em, minimum height=1.5em},
-    rectanglenode/.style = {draw, rectangle, inner sep = 0em, node distance=0em},
-    ellipsenode/.style = {draw, ellipse, inner sep = 0em, node distance=0em},
-    textnode/.style  = {draw=none, fill=none, rectangle, node distance=0em},
-    circlenode/.style = {draw, circle, auto, inner sep = 0em, node distance=0em, minimum size=1.5em}, 
-    dotnode/.style = {draw, fill=black, circle, auto, minimum size=0.1em, inner sep = 0em, node distance=0em},  
+    rectanglenode/.style = {draw, rectangle, rounded corners=0em, inner sep = 2pt},
+    ellipsenode/.style = {draw, ellipse, inner sep = 2pt},
+    textnode/.style  = {align=center, node distance=0em},
+    circlenode/.style = {draw, circle, inner sep = 0em, minimum size=1.5em}, 
+    dotnode/.style = {draw, fill=black, circle, minimum size=0.1em, inner sep = 0em},  
     connect/.style = {black,->}, 
     every text node part/.style={align=center}
 }
