@@ -152,6 +152,14 @@
   \endgroup
 }
 
+\newcommand{\tightfbox}[1]{%
+  \mathchoice
+    {\setlength{\fboxsep}{0pt}\fbox{$\displaystyle #1$}}
+    {\setlength{\fboxsep}{0pt}\fbox{$\textstyle #1$}}
+    {\setlength{\fboxsep}{0pt}\fbox{$\scriptstyle #1$}}
+    {\setlength{\fboxsep}{0pt}\fbox{$\scriptscriptstyle #1$}}%
+}
+
 \newcommand{\dash}{\rule{0.05em}{0pt}\rule[0.3em]{0.6em}{0.06em}\rule{0.05em}{0pt}}
 \newcommand{\mydash}{\rule{0.05em}{0pt}\rule[0.35em]{0.5em}{0.05em}}
 \newcommand{\define}{\stackrel{\text{def}}{=}}
