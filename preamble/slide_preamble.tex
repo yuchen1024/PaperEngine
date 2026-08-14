@@ -41,7 +41,7 @@
 % ==============================================================================
 % 3. ESSENTIAL MATH & SYMBOLS
 % ==============================================================================
-\usepackage{amsmath, amssymb, amsfonts, mathrsfs}
+\usepackage{amsmath, amsthm, amssymb, amsfonts, mathrsfs}
 \usepackage{cancel, siunitx}
 \usepackage{wasysym, pifont}
 
@@ -83,7 +83,7 @@
 
 % --- Custom TikZ Styles ---
 \tikzset{
-    rectanglenode/.style = {draw, rectangle, inner sep = 0.2em, node distance=0em},
+    rectanglenode/.style = {draw, rectangle, inner sep = 0.2em, node distance=0em, rounded corners=0em},
     circlenode/.style    = {circle, draw, auto, inner sep = 0em, node distance=0em}, 
     textnode/.style    = {node distance=0em}, 
     ellipsenode/.style   = {draw, ellipse, inner sep = 0em, node distance=0em, minimum height=0em, minimum width=0em},
@@ -222,9 +222,9 @@
 \newtheorem{proposition}[theorem]{Proposition}
 
 \newenvironment{noteblock}[0]{%
-\setbeamercolor{block body}{bg=blue!10,fg=black}\begin{block}{}}{\end{block}}
+\setbeamercolor{block body}{bg=blue!20,fg=black}\begin{block}{}}{\end{block}}
 \newenvironment{remarkblock}[0]{%
-\setbeamercolor{block body}{bg=darkgreen!10,fg=black}\begin{block}{}}{\end{block}}
+\setbeamercolor{block body}{bg=darkgreen!20,fg=black}\begin{block}{}}{\end{block}}
 \newenvironment{refblock}[0]{%
 \setbeamercolor{block body}{bg=gray!20,fg=black}\begin{block}{}}{\end{block}}
 \newenvironment{claim}{\begin{trivlist} \item \textbf{Claim.}}{\end{trivlist}}
