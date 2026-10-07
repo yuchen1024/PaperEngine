@@ -33,7 +33,11 @@
 \setbeamercolor{title}{fg=lightmidnightblue}
 \setbeamercolor{frametitle}{fg=lightmidnightblue}
 
-\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+% Beamer switches title elements to its sans-serif family (Heiti SC above),
+% overriding the document-level \kaishu selection.  Select Kai explicitly for
+% both the title page and individual frame titles.
+\setbeamerfont{title}{family=\kaishu}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries,family=\kaishu}
 \setbeamertemplate{navigation symbols}{} 
 \setbeamertemplate{footline}[frame number]
 \setbeamerfont{footnote}{size=\small}
@@ -56,7 +60,11 @@
 % 5. GRAPHICS, COLOR & MULTIMEDIA
 % ==============================================================================
 \usepackage{tcolorbox, graphicx, caption}
+% Apply Kai to both the caption label and caption text in Beamer.
+\setbeamerfont{caption}{family=\kaishu}
 \usepackage[absolute, overlay]{textpos}
+
+\usepackage{xcolor}
 %\usepackage{multimedia, animate}
 % ==============================================================================
 % 6. TIKZ & DRAWING (Updated: Removed 'snakes', added 'decorations')
@@ -90,7 +98,8 @@
     dotnode/.style       = {draw, fill=black, circle, auto, minimum size=0.2em, inner sep = 0em, node distance=0em},  
     connect/.style       = {black, ->},
     implies/.style       = {double, double equal sign distance, -implies}, 
-    every text node part/.style={align=center}
+    every node/.style={align=center}, 
+    >={Stealth}
 }
 % ==============================================================================
 % 7. ALGORITHMS
@@ -234,8 +243,8 @@
   \setbeamercolor{block body}{bg=orange!10,fg=black}
   \begin{block}#2{#1}}{\end{block}}
 \newenvironment<>{construction}[1]{%
-  \setbeamercolor{block title}{bg=orchid,fg=white}
-  \setbeamercolor{block body}{bg=orchid!20,fg=black}
+  \setbeamercolor{block title}{bg=violet,fg=white}
+  \setbeamercolor{block body}{bg=violet!20,fg=black}
   \begin{block}#2{#1}}{\end{block}}
 \newenvironment<>{exercise}[1]{%
   \setbeamercolor{block title}{bg=darkgreen,fg=white}
